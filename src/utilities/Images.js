@@ -1,1 +1,3 @@
-export const logo = 'Images/Logo.png';
+
+export const Logo = '../assets/images/logo.png'
+// export const logo = 'assets/images/logo.png';

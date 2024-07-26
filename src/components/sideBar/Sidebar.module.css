@@ -1,0 +1,26 @@
+.container{
+    width: 11rem;
+    height: 100vh;
+    padding: 16px;
+}
+
+.logoCont{
+    display: flex;
+    justify-content: end;
+
+}
+
+.List{
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.ListItem{
+    margin-top: 5px;
+    font-size: 1.2rem;
+}
