@@ -1,7 +1,7 @@
 import React from 'react'
 import style from './Header.module.css'
 import {appBarBackgroundColorGlobal} from '../../utilities/Colors'
-import Logo from '../../assets/images/logo.png'
+import Logo from '../../assets/Images/logo.png'
 
 
 const Header = () => {
