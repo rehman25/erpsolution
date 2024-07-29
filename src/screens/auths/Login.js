@@ -1,11 +1,7 @@
 import React, { useState } from "react";
-import Modals from "../../components/modal/Modal";
-import Toast from "../../utilities/Extend/Toast/Toast";
-import Loader from "../../utilities/Extend/loading/Loader";
-import SkeletonLoader from "../../utilities/Extend/skeleton/Skeleton";
-import Header from "../../components/header/Header";
-import SideBar from "../../components/sideBar/SideBar";
 import style from "./Login.module.css";
+import { Link } from "react-router-dom";
+import {appBarBackgroundColorGlobal } from '../../utilities/Colors'
 
 const Login = () => {
   const [loader, setLoader] = useState(false);
@@ -17,11 +13,11 @@ const Login = () => {
     <>
       <div className="container">
         <div className={`row ${style.row}`}>
-          <div className="col-lg-6">
-            <form>
-              <h1 onClick={handleLoader}>Login</h1>
+          <div className={`col-lg-12 ${style.col}`}>
+            <form className={style.form}>
+              <h5 onClick={handleLoader}>Login</h5>
               <div>
-                <div className="form-group">
+                <div className="form-group mt-2">
                   <label htmlFor="username">Username</label>
                   <input
                     type="text"
@@ -30,7 +26,7 @@ const Login = () => {
                     placeholder="Username"
                   />
                 </div>
-                <div className="form-group">
+                <div className="form-group mt-2">
                   <label htmlFor="password">Password</label>
                   <input
                     type="password"
@@ -39,9 +35,9 @@ const Login = () => {
                     placeholder="Password"
                   />
                 </div>
-                <button type="submit" className="btn btn-primary">
-                  Login
-                </button>
+                  <Link to={'/AddSuppliers'} type="submit" className="btn btn-primary mt-2" style={{background:appBarBackgroundColorGlobal}}>
+                    Login
+                 </Link>
               </div>
             </form>
           </div>

@@ -3,7 +3,9 @@
 div,h1,h2,h3,h4,h5,h6,span,p,ul,li{
   font-family: "Montserrat", sans-serif; 
 }
-
+body{
+  background-color: #f3f4f6;
+}
 .App {
   text-align: center;
 }

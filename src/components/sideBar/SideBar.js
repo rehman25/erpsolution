@@ -1,21 +1,43 @@
-import React from 'react'
+import React,{useState} from 'react'
 import style from './Sidebar.module.css'
 import { appBarBackgroundColorGlobal, textColorDark, textPrimaryColor } from '../../utilities/Colors'
+import { Layout, Menu } from "antd";
+import { MdOutlineInventory } from "react-icons/md";
 import { IoMenuSharp } from "react-icons/io5";
+import { IoIosPersonAdd } from "react-icons/io";
+import { Link } from "react-router-dom";
+const { Sider } = Layout;
 
 
 
-const SideBar = () => {
+
+const Sidebar = () => {
+  const [isMenuClosed, setMenuClosed] = useState(false);
+
+  const handleMenuToggle = () => {
+    setMenuClosed(!isMenuClosed);
+  };
+
   return (
-    <div className={`${style.container}`} style={{backgroundColor:appBarBackgroundColorGlobal}}>
-         <div className={style.logoCont}>
-            <IoMenuSharp color='white' size={24} />
-         </div>
-        <div className={style.List}> 
-           <span style={{color:textColorDark}} className={style.ListItem}>Inventory</span>
-        </div>
-    </div>
-  )
-}
+    <>
+     <Sider>
+          <div className={`${style.container}`}  />
+          <Menu theme="dark" mode="inline" className={style.sideBarMenu} style={{backgroundColor:appBarBackgroundColorGlobal}}> 
+            <div className={style.backword}>
+              {/* <IoArrowBackSharp size={24}  onClick={handleMenuToggle} />d */}
+            </div>
+            <Menu.Item key="1" icon={<MdOutlineInventory />}>
+              <Link to="/AddSuppliers">InvertoryManagement</Link>
+            </Menu.Item>
 
-export default SideBar
+            <Menu.Item key="2" icon={<MdOutlineInventory />} className={style.logout}>
+              <Link to="/">Logout</Link>
+            </Menu.Item>
+            
+          </Menu>
+        </Sider>
+    </>
+  );
+};
+
+export default Sidebar;
